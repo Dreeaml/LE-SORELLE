@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% extends 'base.html' %} 
+{% load static %}
+ 
+    
+{% block content %} 
+<div class="container single_product_container">
+    <div class="row">
+        <div class="col">
+
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs d-flex flex-row align-items-center">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><i class="fa fa-angle-right" aria-hidden="true"></i>{{ product.category }}</li>
+                    <li class="active"><i class="fa fa-angle-right" aria-hidden="true"></i>{{ product.name }}</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-7">
+            <div class="single_product_pics">
+                <div class="row">
+                    <div class="col-lg-9 image_col order-lg-2 order-1">
+                        <div class="single_product_image">
+                            <div class="single_product_image_background">
+                                <img class="card-img-top" src="{{ MEDIA_URL }}{{ product.image }}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="product_details">
+                <div class="product_details_title">
+                    <h2>{{ product.name }}</h2>
+                    <p>{{ product.description }}</p>
+                </div>
+                <div class="free_delivery d-flex flex-row align-items-center justify-content-center">
+                    <i class="fa fa-truck"></i>  <span>free delivery</span>
+                </div>
+                <div class="original_price">$99.00</div>
+                <div class="product_price">{{ product.price }}</div>
+                <ul class="star_rating">
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                </ul>
+                <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
+                    <span>Quantity: </span>
+                    <div class="quantity_selector">
+                        <div class="row">
+                            <form method="post" action="{% url 'add_to_cart' product.id %}">
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <input name="quantity" type="number" min="1" max="999" value="1" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button class="red_button btn" type="submit">Add to cart</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+	

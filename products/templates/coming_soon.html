@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="main_slider">
+		<div class="container fill_height">
+			<!-- Breadcrumbs -->
+            <div class="breadcrumbs d-flex flex-row align-items-center">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Coming Soon</a></li>
+                </ul>
+            </div>
+
+            <div class="site-section">
+                <div class="container">
+                    <div class="row">
+                    <div class="col-md-12 text-center">
+                        <span class="icon-check_circle display-3 text-success"></span>
+                        <h2 class="display-3 text-black">Coming soon!</h2>
+                        <p class="lead mb-5">Stay tuned and...</p>
+                        <p><a href="{% url 'all_products' %}" class="red_button btn">Back to shop</a></p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+{% endblock %}
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% extends 'base.html' %} 
+
+{% load static %} 
+
+{% block content %}
+<div class="main_slider">
+    <div class="container fill_height">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs d-flex flex-row align-items-center">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>FAQ</a></li>
+            </ul>
+        </div>
+        <!-- FAQ Expand and Collapse Bootstrap Feature -->
+        <!-- Privacy Policy extracted from  https://support.gymshark.com -->
+        <div id="accordion">
+
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                MEN'S SIZE GUIDE
+                </button>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        We are currently building this page!<br>
+                        In the meanwhile, you should <a href="/">Go back shopping!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                HOW LONG DOES THE DELIVERY TAKE?
+                </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        We are currently building this page!<br>
+                        In the meanwhile, you should <a href="/">Go back shopping!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                HOW CAN I TRACK MY ORDER?
+                </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        We currently don't offer tracked shipping.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+
+                <div class="card-header" id="headingFour">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                WHAT SHOULD I DO IF MY ORDER HASN'T BEEN DELIVERED YET?
+                </button>
+                    </h5>
+                </div>
+
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                    <div class="card-body">
+                        We are currently building this page!<br>
+                        In the meanwhile, you should <a href="/">Go back shopping!</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

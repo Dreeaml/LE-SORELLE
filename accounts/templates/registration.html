@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% extends 'base.html' %} 
+
+{% load bootstrap_tags %}
+
+{% block page_title %}Registration Page{% endblock %}
+
+{% block content %}
+<div class="main_slider">
+    <div class="container fill_height">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs d-flex flex-row align-items-center">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="{% url 'registration' %}"><i class="fa fa-angle-right" aria-hidden="true"></i>Register</a></li>
+                
+            </ul>
+        </div>                       
+        <div class="site-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 offset-md-4">
+                        <div class="col-md-12 text-center">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="text-center">
+                                        <h2 class="text-center">Register</h2>
+                                        <div class="panel-body">
+
+                                            <p>Do you already have an account? <a href="{% url 'login' %}">Login in</a></p>
+
+                                            <form method="POST" action="{% url 'registration' %}" class="accountform">  
+                                                {% csrf_token %}
+                                                {{registration_form | as_bootstrap}}
+                                                <button type="submit" class="red_button btn">Register</button>
+                                            </form>
+                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>
+{% endblock%}

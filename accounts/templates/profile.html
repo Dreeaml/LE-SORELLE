@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'base.html' %} 
+
+{% block page_title %}{{user}}'s Profile{% endblock %}
+
+{% block page_heading %}Hi {{user}}{% endblock %}
+
+{% block content %}
+<div class="main_slider">
+    <div class="container fill_height">
+        <!-- Breadcrumbs -->
+            <div class="breadcrumbs d-flex flex-row align-items-center">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{% url 'user_profile' %}"><i class="fa fa-angle-right" aria-hidden="true"></i>Profile</a></li>
+                    
+                </ul>
+            </div>
+        <div class="container">
+            <p>Email: {{profile.email}}</p>
+            <p>Do you want to reset your password? We can help you!</p>
+            <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
+        </div>
+    </div>
+</div>
+{% endblock%}
